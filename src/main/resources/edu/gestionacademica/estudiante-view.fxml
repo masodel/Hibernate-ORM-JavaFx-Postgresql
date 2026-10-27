@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox spacing="12.0" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="edu.gestionacademica.controller.EstudianteController">
+    <padding>
+        <Insets top="20.0" right="20.0" bottom="20.0" left="20.0" />
+    </padding>
+    <children>
+        <Label text="Gestión Académica · Registro de estudiantes" />
+        <HBox spacing="8.0">
+            <children>
+                <TextField fx:id="txtNombres" promptText="Nombres" HBox.hgrow="ALWAYS" />
+                <TextField fx:id="txtApellidos" promptText="Apellidos" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <HBox spacing="8.0">
+            <children>
+                <TextField fx:id="txtCorreo" promptText="Correo electrónico" HBox.hgrow="ALWAYS" />
+                <ComboBox fx:id="cmbCarrera" promptText="Carrera" maxWidth="Infinity" HBox.hgrow="ALWAYS" />
+            </children>
+        </HBox>
+        <HBox spacing="8.0">
+            <children>
+                <Button fx:id="btnGuardar" text="Guardar estudiante" onAction="#onGuardar" />
+                <Button fx:id="btnConsultar" text="Consultar estudiantes" onAction="#onConsultar" />
+            </children>
+        </HBox>
+        <Label fx:id="lblMensaje" />
+        <TableView fx:id="tablaEstudiantes" columnResizePolicy="CONSTRAINED_RESIZE_POLICY" VBox.vgrow="ALWAYS">
+            <columns>
+                <TableColumn fx:id="colId" text="ID" />
+                <TableColumn fx:id="colNombres" text="Nombres" />
+                <TableColumn fx:id="colApellidos" text="Apellidos" />
+                <TableColumn fx:id="colCorreo" text="Correo" />
+                <TableColumn fx:id="colCarrera" text="Carrera" />
+            </columns>
+        </TableView>
+    </children>
+</VBox>
